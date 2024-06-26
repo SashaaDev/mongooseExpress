@@ -1,0 +1,29 @@
+doctype html
+html
+    head
+        title='Students page'
+    body
+        h1 Students
+        ul
+          each student in students
+            li= student.name + ', score: ' +student.score
+        p
+        form(action='/create', method='post')
+          div(class='form-group')
+          label(for='name') Name
+          br
+          input(type='text', name='name' required)
+          p
+          div(class='form-group')
+          label(for='subject') Subject
+          br
+          input(type='text', name='subject' required)
+          div(class='form-group')
+          p
+          label(for='score') Score
+          br
+          input(type='number', name='score' required)
+          p
+          input(type='submit')
+        p
+        a(href='/') Back
